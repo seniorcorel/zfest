@@ -1,0 +1,14 @@
+body {
+  background-color: #fff603;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+.twitch-embed {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
