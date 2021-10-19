@@ -462,38 +462,31 @@
   </div>
   <div class="flex-container">
     <div class="flex-left">
-      <a href="#twitch-player"><img src="Twitch_logo.svg" alt="Twitch" class="center"></a>
+      <a href="index.html#twitch-player"><img src="Twitch_logo.svg" alt="Twitch" class="center"></a>
     </div>
     <div class="flex-right">
       <a href="livepeer.html#livepeer"><img src="livepeer_logo.svg" alt="Twitch" class="center"></a>
     </div>
   
   </div>
-
+    
+<div id="livepeer">
+  <div class="video-js-responsive-container vjs-hd ">
   
-
-  <div id="twitch-player" class="twitch">
-    <div class="twitch-video">
-      <iframe
-        src="https://player.twitch.tv/?channel=zfest_es&parent=streaming.zfest.es&autoplay=true"
-        frameborder="0"
-        scrolling="no"
-        allowfullscreen="true"
-        height="100%"
-        width="90%">
-      </iframe>
-    </div>
-    <div class="twitch-chat">
-      <iframe
-        frameborder="0"
-        scrolling="no"
-        src="https://www.twitch.tv/embed/zfest_es/chat?parent=streaming.zfest.es"
-        height="100%"
-        width="100%">
-      </iframe>
-    </div>
+  <video-js id="my_video_1" class="video-js vjs-fluid" controls preload="auto" poster="logo.png">
+    <source src="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8" type="application/x-mpegURL">
+  </video-js>
+  
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
+  
+  <script>
+    var player = videojs('my_video_1');
+  </script>
   </div>
 
+   
+</div>
 </div>        
 
 </body>
