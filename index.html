@@ -52,7 +52,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 20%;
+  width: 10%;
   }
 .twitch-embed {
   margin: auto;
@@ -64,7 +64,11 @@
   position: relative;
   height: 0;
 }
-
+.video-player {
+    margin-left: auto;
+    margin-right: auto;
+    display: block
+}
 .twitch .twitch-video iframe {
   position: absolute;
   width: 100%;
@@ -74,7 +78,10 @@
 .twitch .twitch-chat {
   height: 400px;
 }
-
+video {
+  width: 100% !important;
+  height: auto !important;
+}
 .twitch .twitch-chat iframe {
   width: 100%;
   height: 100%;
@@ -103,6 +110,7 @@
 </head>
 
 <body>
+  
   <div class="row"></div>
     <img src="logo.png" alt="Z-Fest" class="center">
   </div>
@@ -143,9 +151,9 @@
 </br>
 </br>    
 <div id="livepeer" class="twitch">
-  <div class="twitch-video">
-    <div class="responsive-embed">
-      <video width="420" height="315" controls id="video"></video>
+  <div>
+    <div class="video-player">
+      <video width="800" height="600" controls id="video"></video>
     </div>
     <script type="text/javascript">//<![CDATA[
 
@@ -164,15 +172,7 @@
       
         //]]></script>
   </div>    
-  <div class="twitch-chat">
-    <iframe
-      frameborder="0"
-      scrolling="no"
-      src="https://www.twitch.tv/embed/seniorcorel/chat?parent=zfest.pages.dev"
-      height="100%"
-      width="100%">
-    </iframe>
-  </div>
+</div>
 </div>        
 
 </body>
