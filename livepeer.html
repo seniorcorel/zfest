@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,11 +43,6 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js"></script>
   <style>
 
-
-#test {
-  width: 480px;
-  margin: 0 auto;
-}
 .video-js .vjs-menu-button-inline.vjs-slider-active,
 .video-js .vjs-menu-button-inline:focus,
 .video-js .vjs-menu-button-inline:hover,
@@ -192,7 +187,7 @@
 .video-js.vjs-live .vjs-time-control.vjs-duration,
 .video-js.vjs-live .vjs-time-control.vjs-time-divider,
 .video-js.vjs-no-flex .vjs-time-control.vjs-remaining-time {
-    display: none
+    display: true
 }
 
 .video-js.vjs-no-flex .vjs-time-control {
@@ -352,27 +347,6 @@
     background-color: #2483d5
 }
 
-
-
-.flex-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex-left {
-  width: 50%;
-  
-  margin: 5px;
-  padding: 5px;
-  
-}
-
-.flex-right {
-  width: 50%;
-  margin: 5px;
-  padding: 5px;
-  
-}
 .video-js-responsive-container.vjs-hd {
     padding-top: 56.25%;
 }
@@ -394,12 +368,7 @@
   body {
   background-color: #fff603;
   }
-  .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 10%;
-  }
+  
 .twitch-embed {
   margin: auto;
   width: 50%;
@@ -451,24 +420,70 @@
     bottom: 0;
   }
 }
-  </style>
+
+#container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#primary {
+    float: left;
+    width: 240px;
+}
+
+#content {
+    float: left;
+    width: 480px;
+}
+
+#secondary {
+    float: left;
+    width: 240px;
   
+}
+
+
+  </style>
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTPZYLC3LY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CTPZYLC3LY');
+</script>
+
 </head>
 
 <body>
   
+  <div id="container">
+    
+      
+      <div id="primary">
+        <a href="index.html#twitch-player">
+          <img src="Twitch_logo.svg" alt="Twitch" style="padding-top: 50%;">
+        </a>
+      </div>
+      
+      <div id="content">
+        <img src="logo.png" alt="Z-Fest" style="padding-left: 10%;">
+      </div>
+      
+      <div id="secondary">
+        <a href="livepeer.html#livepeer">
+          <img src="livepeer_logo.svg" alt="Twitch" style="padding-top: 50%;">
+        </a>
+      </div>
+      
+      
+  </div>
+
+
   <div class="row"></div>
-    <img src="logo.png" alt="Z-Fest" class="center">
-  </div>
-  <div class="flex-container">
-    <div class="flex-left">
-      <a href="index.html#twitch-player"><img src="Twitch_logo.svg" alt="Twitch" class="center"></a>
-    </div>
-    <div class="flex-right">
-      <a href="livepeer.html#livepeer"><img src="livepeer_logo.svg" alt="Twitch" class="center"></a>
-    </div>
-  
-  </div>
+    
+
     
 <div id="livepeer">
   <div class="video-js-responsive-container vjs-hd ">
