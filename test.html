@@ -1,0 +1,501 @@
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Z-Fest</title>
+  <meta name="description" content="Z-Fest Streaming">
+  <meta name="author" content="Good  Vibes Media SL">
+
+  <meta property="og:title" content="Z-Fest">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="Diversión, música, baile, magia, freestyle y muchas sorpresas en un evento único">
+  <meta property="og:image" content="image.png">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="icons//apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="manifest" href="icons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js"></script>
+  <style>
+
+
+#test {
+  width: 480px;
+  margin: 0 auto;
+}
+.video-js .vjs-menu-button-inline.vjs-slider-active,
+.video-js .vjs-menu-button-inline:focus,
+.video-js .vjs-menu-button-inline:hover,
+.video-js.vjs-no-flex .vjs-menu-button-inline {
+    width: 10em
+}
+
+.video-js .vjs-controls-disabled .vjs-big-play-button {
+    display: none!important
+}
+
+.video-js .vjs-control {
+    width: 3em
+}
+
+.video-js .vjs-menu-button-inline:before {
+    width: 1.5em
+}
+
+.vjs-menu-button-inline .vjs-menu {
+    left: 3em
+}
+
+.video-js.vjs-paused .vjs-big-play-button,
+.vjs-paused.vjs-has-started.video-js .vjs-big-play-button {
+    display: block
+}
+
+.video-js .vjs-load-progress div,
+.vjs-seeking .vjs-big-play-button,
+.vjs-waiting .vjs-big-play-button {
+    display: none!important
+}
+
+.video-js .vjs-mouse-display:after,
+.video-js .vjs-play-progress:after {
+    padding: 0 .4em .3em
+}
+
+.video-js.vjs-ended .vjs-loading-spinner {
+    display: none
+}
+
+.video-js.vjs-ended .vjs-big-play-button {
+    display: block!important
+}
+
+.video-js *,
+.video-js:after,
+.video-js:before {
+    box-sizing: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit
+}
+
+.video-js.vjs-fullscreen,
+.video-js.vjs-fullscreen .vjs-tech {
+    width: 100%!important;
+    height: 100%!important
+}
+
+.video-js {
+    font-size: 14px;
+    overflow: hidden
+}
+
+.video-js .vjs-control {
+    color: inherit
+}
+
+.video-js .vjs-menu-button-inline:hover,
+.video-js.vjs-no-flex .vjs-menu-button-inline {
+    width: 8.35em
+}
+
+.video-js .vjs-volume-menu-button.vjs-volume-menu-button-horizontal:hover .vjs-menu .vjs-menu-content {
+    height: 3em;
+    width: 6.35em
+}
+
+.video-js .vjs-control:focus:before,
+.video-js .vjs-control:hover:before {
+    text-shadow: 0 0 1em #fff, 0 0 1em #fff, 0 0 1em #fff
+}
+
+.video-js .vjs-spacer,
+.video-js .vjs-time-control {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1 1 auto;
+    -moz-box-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto
+}
+
+.video-js .vjs-time-control {
+    -webkit-box-flex: 0 1 auto;
+    -moz-box-flex: 0 1 auto;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: auto
+}
+
+.video-js .vjs-time-control.vjs-time-divider {
+    width: 14px
+}
+
+.video-js .vjs-time-control.vjs-time-divider div {
+    width: 100%;
+    text-align: center
+}
+
+.video-js .vjs-time-control.vjs-current-time {
+    margin-left: 1em
+}
+
+.video-js .vjs-time-control .vjs-current-time-display,
+.video-js .vjs-time-control .vjs-duration-display {
+    width: 100%
+}
+
+.video-js .vjs-time-control .vjs-current-time-display {
+    text-align: right
+}
+
+.video-js .vjs-time-control .vjs-duration-display {
+    text-align: left
+}
+
+.video-js .vjs-play-progress:before,
+.video-js .vjs-progress-control .vjs-play-progress:before,
+.video-js .vjs-remaining-time,
+.video-js .vjs-volume-level:after,
+.video-js .vjs-volume-level:before,
+.video-js.vjs-live .vjs-time-control.vjs-current-time,
+.video-js.vjs-live .vjs-time-control.vjs-duration,
+.video-js.vjs-live .vjs-time-control.vjs-time-divider,
+.video-js.vjs-no-flex .vjs-time-control.vjs-remaining-time {
+    display: none
+}
+
+.video-js.vjs-no-flex .vjs-time-control {
+    display: table-cell;
+    width: 4em
+}
+
+.video-js .vjs-progress-control {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: .5em;
+    top: -.5em
+}
+
+.video-js .vjs-progress-control .vjs-load-progress,
+.video-js .vjs-progress-control .vjs-play-progress,
+.video-js .vjs-progress-control .vjs-progress-holder {
+    height: 100%
+}
+
+.video-js .vjs-progress-control .vjs-progress-holder {
+    margin: 0
+}
+
+.video-js .vjs-progress-control:hover {
+    height: 1.5em;
+    top: -1.5em
+}
+
+.video-js .vjs-control-bar {
+    -webkit-transition: -webkit-transform .1s ease 0s;
+    -moz-transition: -moz-transform .1s ease 0s;
+    -ms-transition: -ms-transform .1s ease 0s;
+    -o-transition: -o-transform .1s ease 0s;
+    transition: transform .1s ease 0s
+}
+
+.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar,
+.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar,
+.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar,
+.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar,
+.video-js.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar {
+    visibility: visible;
+    opacity: 1;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateY(3em);
+    -moz-transform: translateY(3em);
+    -ms-transform: translateY(3em);
+    -o-transform: translateY(3em);
+    transform: translateY(3em);
+    -webkit-transition: -webkit-transform 1s ease 0s;
+    -moz-transition: -moz-transform 1s ease 0s;
+    -ms-transition: -ms-transform 1s ease 0s;
+    -o-transition: -o-transform 1s ease 0s;
+    transition: transform 1s ease 0s
+}
+
+.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-progress-control,
+.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-progress-control,
+.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-progress-control,
+.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control,
+.video-js.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control {
+    height: .25em;
+    top: -.25em;
+    pointer-events: none;
+    -webkit-transition: height 1s, top 1s;
+    -moz-transition: height 1s, top 1s;
+    -ms-transition: height 1s, top 1s;
+    -o-transition: height 1s, top 1s;
+    transition: height 1s, top 1s
+}
+
+.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-active.vjs-fullscreen .vjs-progress-control,
+.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,
+.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-active.vjs-fullscreen .vjs-progress-control,
+.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control,
+.video-js.vjs-has-started.vjs-playing.vjs-user-inactive.vjs-fullscreen .vjs-progress-control {
+    opacity: 0;
+    -webkit-transition: opacity 1s ease 1s;
+    -moz-transition: opacity 1s ease 1s;
+    -ms-transition: opacity 1s ease 1s;
+    -o-transition: opacity 1s ease 1s;
+    transition: opacity 1s ease 1s
+}
+
+.video-js.vjs-live .vjs-live-control {
+    margin-left: 1em
+}
+
+.video-js .vjs-big-play-button {
+    top: 50%;
+    left: 50%;
+    margin-left: -1em;
+    width: 2em;
+    border: none;
+    color: #fff;
+    -webkit-transition: border-color .4s, outline .4s, background-color .4s;
+    -moz-transition: border-color .4s, outline .4s, background-color .4s;
+    -ms-transition: border-color .4s, outline .4s, background-color .4s;
+    -o-transition: border-color .4s, outline .4s, background-color .4s;
+    transition: border-color .4s, outline .4s, background-color .4s;
+    background-color: rgba(0, 0, 0, .45);
+    font-size: 3.5em;
+    border-radius: 50%;
+    height: 2em!important;
+    line-height: 2em!important;
+    margin-top: -1em!important
+}
+
+.video-js .vjs-menu-button-popup .vjs-menu {
+    left: -3em
+}
+
+.video-js .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+    background-color: transparent;
+    width: 12em;
+    left: -1.5em;
+    padding-bottom: .5em
+}
+
+.video-js .vjs-menu-button-popup .vjs-menu .vjs-menu-item,
+.video-js .vjs-menu-button-popup .vjs-menu .vjs-menu-title {
+    background-color: #151b17;
+    margin: .3em 0;
+    padding: .5em;
+    border-radius: .3em
+}
+
+.video-js .vjs-menu-button-popup .vjs-menu .vjs-menu-item.vjs-selected {
+    background-color: #2483d5
+}
+
+.video-js .vjs-big-play-button:active,
+.video-js .vjs-big-play-button:focus,
+.video-js:hover .vjs-big-play-button {
+    background-color: rgba(36, 131, 213, .9)
+}
+
+.video-js .vjs-loading-spinner {
+    border-color: rgba(36, 131, 213, .8)
+}
+
+.video-js .vjs-control-bar2 {
+    background-color: #000
+}
+
+.video-js .vjs-control-bar {
+    background-color: rgba(0, 0, 0, .3)!important;
+    color: #fff;
+    font-size: 14px
+}
+
+.video-js .vjs-play-progress,
+.video-js .vjs-volume-level {
+    background-color: #2483d5
+}
+
+
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-left {
+  width: 50%;
+  
+  margin: 5px;
+  padding: 5px;
+  
+}
+
+.flex-right {
+  width: 50%;
+  margin: 5px;
+  padding: 5px;
+  
+}
+.video-js-responsive-container.vjs-hd {
+    padding-top: 56.25%;
+}
+.video-js-responsive-container.vjs-sd {
+    padding-top: 75%;
+}
+.video-js-responsive-container {
+    width: 100%;
+    position: relative;
+}
+.video-js-responsive-container .video-js {
+    height: 100% !important; 
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+  body {
+  background-color: #fff603;
+  }
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  }
+.twitch-embed {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.twitch .twitch-video {
+  padding-top: 56.25%;
+  position: relative;
+  height: 0;
+}
+.video-player {
+    margin-left: auto;
+    margin-right: auto;
+    display: block
+}
+.twitch .twitch-video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.twitch .twitch-chat {
+  height: 400px;
+}
+.video-js {
+  width: 100% !important;
+  height: auto !important;
+}
+.twitch .twitch-chat iframe {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 850px) {
+  .twitch {
+    position: relative;
+  }
+
+  .twitch .twitch-video {
+    width: 75%;
+    padding-top: 42.1875%;
+  }
+
+  .twitch .twitch-chat {
+    width: 25%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+  </style>
+  
+</head>
+
+<body>
+  
+  <div class="row"></div>
+    <img src="logo.png" alt="Z-Fest" class="center" style="width: 10%;">
+  </div>
+  <div class="flex-container">
+    <div class="flex-left">
+      <a href="#twitch-player"><img src="Twitch_logo.svg" alt="Twitch" class="center" style="width: 20%;"></a>
+    </div>
+    <div class="flex-right">
+      <a href="livepeer.html#livepeer"><img src="livepeer_logo.svg" alt="Twitch" class="center" style="width: 20%;"></a>
+    </div>
+  
+  </div>
+
+  
+
+  <div id="twitch-player" class="twitch">
+    <div class="twitch-video">
+      <iframe
+        src="https://player.twitch.tv/?channel=zfest_es&parent=streaming.zfest.es&autoplay=true"
+        frameborder="0"
+        scrolling="no"
+        allowfullscreen="true"
+        height="100%"
+        width="90%">
+      </iframe>
+    </div>
+    <div class="twitch-chat">
+      <iframe
+        frameborder="0"
+        scrolling="no"
+        src="https://www.twitch.tv/embed/zfest_es/chat?parent=streaming.zfest.es"
+        height="100%"
+        width="100%">
+      </iframe>
+    </div>
+  </div>
+
+</div>        
+
+</body>
+</html>

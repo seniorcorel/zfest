@@ -365,10 +365,15 @@
       left: 0;
   }
   
-    body {
+  body {
     background-color: #fff603;
-    }
-    
+  }
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  } 
+  
   .twitch-embed {
     margin: auto;
     width: 50%;
@@ -421,26 +426,25 @@
     }
   }
   
-  #container {
-      width: 960px;
-      margin: 0 auto;
-  }
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-left {
+  width: 50%;
   
-  #primary {
-      float: left;
-      width: 240px;
-  }
+  margin: 5px;
+  padding: 5px;
   
-  #content {
-      float: left;
-      width: 480px;
-  }
+}
+
+.flex-right {
+  width: 50%;
+  margin: 5px;
+  padding: 5px;
   
-  #secondary {
-      float: left;
-      width: 240px;
-    
-  }
+}
   
   
     </style>
@@ -457,31 +461,19 @@
   </head>
 
 <body>
-  <div id="container">
-    
-      
-    <div id="primary">
-      <a href="index.html#twitch-player">
-        <img src="Twitch_logo.svg" alt="Twitch" style="padding-top: 50%;">
-      </a>
-    </div>
-    
-    <div id="content">
-      <img src="logo.png" alt="Z-Fest" style="padding-left: 10%;">
-    </div>
-    
-    <div id="secondary">
-      <a href="livepeer.html#livepeer">
-        <img src="livepeer_logo.svg" alt="Twitch" style="padding-top: 50%;">
-      </a>
-    </div>
-    
-    
-</div>
+
   <div class="row"></div>
-
-
+    <img src="logo.png" alt="Z-Fest" class="center" style="width: 10%;">
+  </div>
+  <div class="flex-container">
+    <div class="flex-left">
+      <a href="#twitch-player"><img src="Twitch_logo.svg" alt="Twitch" class="center" style="width: 20%;"></a>
+    </div>
+    <div class="flex-right">
+      <a href="livepeer.html#livepeer"><img src="livepeer_logo.svg" alt="Twitch" class="center" style="width: 20%;"></a>
+    </div>
   
+  </div>
 
   <div id="twitch-player" class="twitch">
     <div class="twitch-video">
